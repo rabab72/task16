@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Even/Odd Number Checker</h1>
+    <label for="numberInput">Enter a number:</label>
+    <input type="text" id="numberInput">
+    <button onclick="checkNumber()">Check</button>
+    <p id="result"></p>
+
+    <h1>Temperature Message</h1>
+    <label for="temperatureInput">Enter the temperature:</label>
+    <input type="text" id="temperatureInput">
+    <button onclick="checkTemperature()">Check</button>
+    <p id="message"></p>
+
+</body>
+<script src="app.js">
+    function checkNumber() {
+
+        let number = document.getElementById("numberInput").value;
+
+
+        if (!isNaN(number) && number !== "") {
+
+            if (number % 2 === 0) {
+                document.getElementById("result").innerText = number + " is an even number.";
+            } else {
+                document.getElementById("result").innerText = number + " is an odd number.";
+            }
+        } else {
+
+            document.getElementById("result").innerText = "Please enter a valid number.";
+        }
+
+    }
+
+    function checkTemperature() {
+
+        let temperature = parseFloat(document.getElementById("temperatureInput").value);
+        if (temperature > 40) {
+            document.getElementById("message").innerText = "It is too hot outside.";
+        } else if (temperature > 30) {
+            document.getElementById("message").innerText = "The Weather today is Normal.";
+        } else if (temperature > 20) {
+            document.getElementById("message").innerText = "Today’s Weather is cool.";
+        } else if (temperature > 10) {
+            document.getElementById("message").innerText = "OMG! Today’s weather is so Cool.";
+        } else if (temperature > 5) {
+            document.getElementById("message").innerText = "Temperature is too low.";
+        } else {
+
+            document.getElementById("result").innerText = "Please enter a valid number.";
+        }
+
+    }
+</script>
+
+</html>
